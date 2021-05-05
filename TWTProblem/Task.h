@@ -25,6 +25,13 @@ Task(){
     Weight=0;
     Deadline=0;
 }
+void AddTerminationTime(int Ttime);
+void AddStartTime(int Stime);
+void AddPerformedTime(int Ptime);
+void AddDelayTime(int Dtime);
+void AddWeight(int Weight);
+void AddDeadline(int Deadline);
+int ShowValueOfVariable(char FirstLetter);
 
 };
 
