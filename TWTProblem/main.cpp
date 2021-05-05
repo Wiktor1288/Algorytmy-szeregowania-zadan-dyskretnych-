@@ -6,6 +6,9 @@
 
 using namespace std;
 void GenerateRandomData(RandomNumberGenerator RandomObject, shared_ptr <Task []> Tasks, int SizeT);
+/* ShowTask
+    Basic function for display instance and data
+*/
 void ShowTasks(shared_ptr <Task []> Tasks, int SizeT, shared_ptr <int[]> Order);
 int Objectivefunction(shared_ptr <Task []> Tasks, int SizeT, shared_ptr <int[]> Order);
 int main()
