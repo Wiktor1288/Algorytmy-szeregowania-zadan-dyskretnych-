@@ -61,6 +61,15 @@ void Task::AddDeadline(int Deadline){
         std::cout << "Deadline can't be lower than 0 \n";
 }
 
+void Task::AddWT(int Value){
+    if(Value>=0){
+        WT=Value;
+    }
+    else 
+        std::cout << "WT can't be lower than 0 \n";
+
+}
+
 
 int Task::ShowValueOfVariable(char FirstLetter){
 
@@ -81,6 +90,9 @@ int Task::ShowValueOfVariable(char FirstLetter){
     }
     if(FirstLetter == 'L'){
         return Deadline;
+    }
+    if(FirstLetter == 'T'){
+        return WT;
     }
     else{
         std::cout << "Wrong choice in Task::ShowValueOfVariable \n";
