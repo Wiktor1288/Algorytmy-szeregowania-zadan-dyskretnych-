@@ -15,7 +15,7 @@ void Task::AddCompleteTime(int Ctime){
 
 
 void Task::AddStartTime(int Stime){
-    if(Stime > 0 ){
+    if(Stime >= 0 ){
         StartTime=Stime;
     }
     else 

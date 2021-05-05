@@ -11,6 +11,7 @@ void GenerateRandomData(RandomNumberGenerator RandomObject, shared_ptr <Task []>
 */
 void ShowTasks(shared_ptr <Task []> Tasks, int SizeT, shared_ptr <int[]> Order);
 int Objectivefunction(shared_ptr <Task []> Tasks, int SizeT, shared_ptr <int[]> Order);
+void GreedyAlgorithm(shared_ptr <Task []> Tasks, int SizeT, shared_ptr <int []> Order); 
 int main()
 {
 auto NumberOfTask{0}, Seed{0};
@@ -24,6 +25,10 @@ shared_ptr <int[]> TabOrder(new int[NumberOfTask]);
 for(auto i=0; i<NumberOfTask; i++)
     TabOrder[i]=i;
 GenerateRandomData(Random1, TaskTab, NumberOfTask);
+Objectivefunction(TaskTab, NumberOfTask, TabOrder);
+ShowTasks(TaskTab, NumberOfTask, TabOrder);
+cout << "greedy \n"; 
+GreedyAlgorithm(TaskTab, NumberOfTask, TabOrder);
 Objectivefunction(TaskTab, NumberOfTask, TabOrder);
 ShowTasks(TaskTab, NumberOfTask, TabOrder);
 return 0;
@@ -82,3 +87,29 @@ int Objectivefunction(shared_ptr <Task []> Tasks, int SizeT, shared_ptr <int[]> 
 
     return sum;
 }
+
+
+void GreedyAlgorithm(shared_ptr <Task []> Tasks, int SizeT, shared_ptr <int []> Order){
+
+    auto i{0}, j{0}, minV{0}, IDmin{0};
+    vector<Task> Nset;
+
+    for(i=0; i<SizeT; i++){
+        Nset.push_back(Tasks[i]);
+    }
+    
+    for(i=0; i<SizeT; i++){
+        minV=Nset[0].ShowValueOfVariable('L');
+        for(j=0; j<SizeT-i; j++){ 
+            if(minV >= Nset[j].ShowValueOfVariable('L')){
+                Order[i]=Nset[j].IdOfTask-1;
+                IDmin=j;
+                minV=Nset[j].ShowValueOfVariable('L');
+            }
+        }
+        Nset.erase(Nset.begin() + IDmin);
+    }
+
+}
+
+
