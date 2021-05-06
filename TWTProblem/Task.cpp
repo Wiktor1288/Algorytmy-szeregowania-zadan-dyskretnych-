@@ -34,7 +34,7 @@ void Task::AddPerformedTime(int Ptime){
 
 
 void Task::AddDelayTime(int Dtime){
-    if(Dtime > 0 ){
+    if(Dtime >= 0 ){
         DelayTime=Dtime;
     }
     else 
