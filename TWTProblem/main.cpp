@@ -33,17 +33,19 @@ for(auto i=0; i<NumberOfTask; i++)
 GenerateRandomData(Random1, TaskTab, NumberOfTask);
 Objectivefunction(TaskTab, NumberOfTask, TabOrder);
 ShowTasks(TaskTab, NumberOfTask, TabOrder);
+
+cout << "greedy \n"; 
+GreedyAlgorithm(TaskTab, NumberOfTask, TabOrder);
+F=Objectivefunction(TaskTab, NumberOfTask, TabOrder);
+ShowTasks(TaskTab, NumberOfTask, TabOrder);
+cout<<"\n---------------------"<<F<<"\n";
+
 cout<<"\n-------BruteForce--------\n";
 BruteForce(TaskTab, NumberOfTask, TabOrder);
 F=Objectivefunction(TaskTab, NumberOfTask, TabOrder);
 ShowTasks(TaskTab, NumberOfTask, TabOrder);
 cout<<"\n---------------------"<<F<<"\n";
-cout << "greedy \n"; 
-GreedyAlgorithm(TaskTab, NumberOfTask, TabOrder);
-Objectivefunction(TaskTab, NumberOfTask, TabOrder);
-ShowTasks(TaskTab, NumberOfTask, TabOrder);
 
-return 0;
 return 0;
 }
 
